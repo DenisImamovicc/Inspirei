@@ -30,7 +30,7 @@ function App() {
             <Card.Subtitle className="mb-2 text-white fade-in" id='author'>- {author}</Card.Subtitle>
             <div className='button-group'>
             <Button variant="outline-dark" id="new-quote" className='mb-2 text-white' onClick={FetchQoutes}>Gimme another qoute</Button>
-            <Button variant="outline-dark" href="twitter.com/intent/tweet" id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
+            <Button variant="outline-dark" href={"https://twitter.com/intent/tweet?text="+`${qoute}By ${author}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
             </div>
           </Card.Body>
         </Card>
