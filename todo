@@ -1,0 +1,9 @@
+-Qoute text and author fade in and out
+
+-Bg image that is max 4k resoultion in size
+
+-Change bg image everytime new qoutes are called
+
+-get bg images from an api
+
+-Make a rest api server to not have to use cors blocker to make site function

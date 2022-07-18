@@ -10,7 +10,7 @@
 
 .App{
   height: 100vh;
-  background-image: url(/public/images/bg-desktop.jpg);
+  /* background-image: url(/public/images/bg-desktop.jpg); */
   background-size: 100vw 100vh;
 
   background-repeat:no-repeat; 
