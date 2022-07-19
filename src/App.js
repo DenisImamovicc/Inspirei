@@ -24,15 +24,12 @@ function App() {
 
 
 
-const DisplayQoutes = (dataqoute) => {
-  console.log(qoute.length)
-  return setcount(currcount=>currcount+1) + setCurrqoute(dataqoute[count])
-    }
+const DisplayQoutes = (inputData) => setcount(count=>count+1) + setCurrqoute(inputData[count])
+    
 
    const ManageQoutes = () =>{
      if(count===qoute.length-1||count===0){
       setcount(0)
-      console.log("reseted count")
       return FetchQoutes()  
     }else{
        console.log("Should not do this")
@@ -44,6 +41,10 @@ const DisplayQoutes = (dataqoute) => {
     FetchQoutes()
     //eslint-disable-next-line react-hooks/exhaustive-deps
    },[])
+   
+   useEffect(() => {
+    console.log("reseted count",count)
+   },[count])
    
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
