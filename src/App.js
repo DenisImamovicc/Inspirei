@@ -6,53 +6,56 @@ import background from "./images/bg-desktop.jpg";
 // import BgImgages from "./bgapicall.json"
 
 function App() {
-const [qoute, setqoute] = useState("")
-const [currentqoute, setcurrentqoute] = useState("")
-const [count, setcount] = useState(0)
+  const [qoute, setqoute] = useState([{}])
+  const [Currqoute, setCurrqoute] = useState([{}])
+  const [count, setcount] = useState(0)
+  //const [loading,setLoading]=useState(true)
+  
+  const FetchQoutes = async () =>{
+    const Qoute=await fetch('https://zenquotes.io/api/quotes/')
+    .then(response => response.json())
+    .then((data) => {
+       setqoute(data)
+       DisplayQoutes(data)
+    });
+    //console.log(Qoute)
+   return Qoute
+  }
 
-   const FetchQoutes = async () =>{
-     const Qoute=await fetch('https://zenquotes.io/api/quotes/')
-     .then(response => response.json())
-     .then(data => data);
-    
-     //console.log(Qoute)
-     return setqoute(Qoute)
-   }
 
-   const DisplayQoutes = () => {
-     return setcurrentqoute(()=>qoute[count-2]) + setcount(currcount=>currcount+1)
-   }
+
+const DisplayQoutes = (dataqoute) => {
+  console.log(qoute.length)
+  return setcount(currcount=>currcount+1) + setCurrqoute(dataqoute[count])
+    }
 
    const ManageQoutes = () =>{
-     if(count===50||count===0){
-      FetchQoutes()
-      setcount(()=>0)
+     if(count===qoute.length-1||count===0){
+      setcount(0)
       console.log("reseted count")
-      return DisplayQoutes()
-     }else{
+      return FetchQoutes()  
+    }else{
        console.log("Should not do this")
-       return DisplayQoutes()
+       return DisplayQoutes(qoute)
       }     
    }
-
-
-
-  useEffect(() => {
-    ManageQoutes()
-  },[qoute])
-  
-
+   
+   useEffect(() => {
+    FetchQoutes()
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+   },[])
+   
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
       <h1 id='main-title'>Random Quote Generator</h1>
       <div id="quote-box">
         <Card className="Card"> 
           <Card.Body>
-            <Card.Title id='text' className='text-white fade-in'>{currentqoute &&currentqoute.q}</Card.Title>
-            <Card.Subtitle className="mb-2 text-white fade-in" id='author'>- {currentqoute &&currentqoute.a}</Card.Subtitle>
+            <Card.Title id='text' className='text-white fade-in'>{Currqoute && Currqoute.q}</Card.Title>
+            <Card.Subtitle className="mb-2 text-white fade-in" id='author'>- {Currqoute && Currqoute.a}</Card.Subtitle>
             <div className='button-group'>
             <Button variant="outline-dark" id="new-quote" className='mb-2 text-white' onClick={ManageQoutes}>Gimme another qoute</Button>
-            <Button variant="outline-dark" href={`https://twitter.com/intent/tweet?text=${currentqoute &&currentqoute.q}By ${currentqoute &&currentqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
+            <Button variant="outline-dark" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q}By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
             </div>
           </Card.Body>
         </Card>
