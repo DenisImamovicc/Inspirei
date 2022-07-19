@@ -17,23 +17,25 @@ function App() {
     .then((data) => {
        setqoute(data)
        DisplayQoutes(data)
+    }).catch((error)=>{
+      console.error(error);
+      DisplayQoutes([{q:"Cors disable you must",a:"The Creator"}])
     });
     //console.log(Qoute)
    return Qoute
   }
 
-
-
-const DisplayQoutes = (inputData) => setcount(count=>count+1) + setCurrqoute(inputData[count])
+const DisplayQoutes = (inputData) => setCurrqoute(inputData[count])
     
-
    const ManageQoutes = () =>{
      if(count===qoute.length-1||count===0){
       setcount(0)
-      return FetchQoutes()  
+      FetchQoutes()  
+      setcount((count)=>count+1) 
     }else{
        console.log("Should not do this")
-       return DisplayQoutes(qoute)
+       DisplayQoutes(qoute)
+       setcount((count)=>count+1) 
       }     
    }
    
