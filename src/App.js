@@ -19,7 +19,7 @@ function App() {
        DisplayQoutes(data)
     }).catch((error)=>{
       console.error(error);
-      DisplayQoutes([{q:"Server is down,but you do not have to",a:"Denis Imamovic"}])
+      DisplayQoutes([{q:"Server is down,but you do not have to be",a:"Denis Imamovic"}])
     });
     //console.log(Qoute)
   }
