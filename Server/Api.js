@@ -1,16 +1,17 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import 'dotenv/config'
 
-//const apikey = "904552878bd72bf5143028f71ca3411e";
 const allowedserver = "*";
 const api = express();
 const port = 4000;
-const apiLink = "https://zenquotes.io/api/quotes/"
+const apiURL = process.env.ZEN_QOUTES_API_URL
 
+console.log(apiURL);
 //Fetch and return  succesful data with x amount of photos and specified theme;
 function getExternaldata(req,res) {
-    fetch(apiLink).then((res) => res.json()).then(function (rawData) {
+    fetch(`${apiURL}`).then((res) => res.json()).then(function (rawData) {
         const filteredData = res.status(200).send(rawData);
         return filteredData;
     }).catch(function (err) {
