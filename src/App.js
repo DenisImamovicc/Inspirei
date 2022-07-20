@@ -12,7 +12,7 @@ function App() {
   //const [loading,setLoading]=useState(true)
   
   const FetchQoutes = async () =>{
-    const Qoute=await fetch('https://zenquotes.io/api/quotes/')
+    await fetch("http://localhost:4000/Qoutes")
     .then(response => response.json())
     .then((data) => {
        setqoute(data)
@@ -22,7 +22,6 @@ function App() {
       DisplayQoutes([{q:"Cors disable you must",a:"The Creator"}])
     });
     //console.log(Qoute)
-   return Qoute
   }
 
 const DisplayQoutes = (inputData) => setCurrqoute(inputData[count])
@@ -58,7 +57,7 @@ const DisplayQoutes = (inputData) => setCurrqoute(inputData[count])
             <Card.Subtitle className="mb-2 text-white fade-in" id='author'>- {Currqoute && Currqoute.a}</Card.Subtitle>
             <div className='button-group'>
             <Button variant="outline-dark" id="new-quote" className='mb-2 text-white' onClick={ManageQoutes}>Gimme another qoute</Button>
-            <Button variant="outline-dark" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q}By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
+            <Button variant="outline-dark" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q} By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
             </div>
           </Card.Body>
         </Card>
