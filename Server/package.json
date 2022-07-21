@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "It fetches and gives data to thos who are worthy",
   "main": "Api.js",
   "type": "module",
   "scripts": {

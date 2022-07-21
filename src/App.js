@@ -5,14 +5,14 @@ import Button from 'react-bootstrap/Button'
 import background from "./images/bg-desktop.jpg";
 // import BgImgages from "./bgapicall.json"
 
-function App() {
+function App() { 
   const [qoute, setqoute] = useState([{}])
   const [Currqoute, setCurrqoute] = useState([{}])
   const [count, setcount] = useState(0)
-  //const [loading,setLoading]=useState(true)
+  const API_ROUTE = `https://random-qoute-generator-api.herokuapp.com/Qoutes`
   
   const FetchQoutes = async () =>{
-    await fetch("http://localhost:4000/Qoutes")
+    await fetch(API_ROUTE)
     .then(response => response.json())
     .then((data) => {
        setqoute(data)

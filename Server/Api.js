@@ -5,13 +5,12 @@ import 'dotenv/config'
 
 const allowedserver = "*";
 const api = express();
-const port = 4000;
 const apiURL = process.env.ZEN_QOUTES_API_URL
-
-console.log(apiURL);
+const port = process.env.PORT || 80
 //Fetch and return  succesful data with x amount of photos and specified theme;
 function getExternaldata(req,res) {
     fetch(`${apiURL}`).then((res) => res.json()).then(function (rawData) {
+        console.log("Sent requested data");
         const filteredData = res.status(200).send(rawData);
         return filteredData;
     }).catch(function (err) {
@@ -26,6 +25,10 @@ api.use(cors({
 }));
 
 api.listen(port, () => console.log(port, `Live at http://localhost:${port}`));
+
+api.get("/", function (req, res) {
+    res.send("You are not supposed to here :)")
+});
 
 ///Route responds to requests by calling getExternaldata().
 api.get("/Qoutes", function (req, res) {
