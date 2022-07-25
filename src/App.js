@@ -65,7 +65,7 @@ const DisplayQoutes = (inputData) => {
    
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
-      <h1 id='main-title'>Random Quote Generator</h1>
+      <h1 id='main-title'>Inspirei</h1>
       <div id="quote-box">
         <Card className="Card"> 
           <Card.Body>
