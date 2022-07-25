@@ -1,6 +1,9 @@
 #main-title{
   text-align: center;
-  color: antiquewhite;
+  color: rgb(65, 173, 176);
+
+  padding-top: 2rem;
+  padding-bottom: 10rem;
 }
 
 #quote-box{
@@ -15,14 +18,15 @@
 
   background-repeat:no-repeat; 
   background-size: "cover";
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .Card{
-  width: 18rem;
-  background-color: transparent;
+  min-width: 18rem;
+  max-width: 25rem;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: saturate(180%) blur(10px);
 }
 .button-group{
   display: flex;
