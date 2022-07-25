@@ -65,15 +65,15 @@ const DisplayQoutes = (inputData) => {
    
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
-      <h1 id='main-title'>Inspirei</h1>
+      <h1 id='main-title'>Random Quote Generator</h1>
       <div id="quote-box">
         <Card className="Card"> 
           <Card.Body>
-            <Card.Title id='text' className='text-white fade-in'>{Currqoute && Currqoute.q}</Card.Title>
-            <Card.Subtitle className="mb-2 text-white fade-in" id='author'>- {Currqoute && Currqoute.a}</Card.Subtitle>
+          <Fade in={open} timeout={700}><Card.Title id='text' className='text-white'>{Currqoute && Currqoute.q}</Card.Title></Fade>
+          <Fade in={open} timeout={700}><Card.Subtitle className="mb-2 text-white" id='author'>- {Currqoute && Currqoute.a}</Card.Subtitle></Fade>
             <div className='button-group'>
-            <Button variant="primary" id="new-quote" className='mb-2 text-white' onClick={ManageQoutes}>Gimme another qoute</Button>
-            <Button variant="secondary" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q} By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Imma tweet it!</Button>
+            <Button variant="outline-dark " id="new-quote" className='mb-2 text-white' onClick={()=>{setTimeout(ManageQoutes, 700);ManageFade()}} aria-controls="text author" aria-expanded={open}>Gimme another qoute</Button>
+            <Button variant="btn btn-primary" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q} By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Tweet current qoute!</Button>
             </div>
           </Card.Body>
         </Card>
