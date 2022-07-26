@@ -17,7 +17,6 @@ function App() {
     setOpen((open)=>!open)
   }
 
-
   const FetchQoutes = async () =>{
     await fetch(API_ROUTE)
     .then(response => response.json())
@@ -60,9 +59,7 @@ const DisplayQoutes = (inputData) => {
      ManageQoutes()
     //eslint-disable-next-line react-hooks/exhaustive-deps
    },[])
-
-   
-   
+  
   return (
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
       <h1 id='main-title'>Inspirei</h1>
@@ -73,7 +70,7 @@ const DisplayQoutes = (inputData) => {
           <Fade in={open} timeout={700}><Card.Subtitle className="mb-2 text-white" id='author'>- {Currqoute && Currqoute.a}</Card.Subtitle></Fade>
             <div className='button-group'>
             <Button variant="btn btn-primary" id="new-quote" className='mb-2 text-white' onClick={()=>{setTimeout(ManageQoutes, 700);ManageFade()}} aria-controls="text author" aria-expanded={open}>Gimme another qoute</Button>
-            <Button variant="btn btn-secondary" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q} By ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Tweet current qoute!</Button>
+            <Button variant="btn btn-secondary" href={`https://twitter.com/intent/tweet?text=${Currqoute && Currqoute.q} %0A%0A- ${Currqoute && Currqoute.a}`} id="tweet-quote" className='mb-2 text-white'  target='blank'>Tweet current qoute!</Button>
             </div>
           </Card.Body>
         </Card>
@@ -81,8 +78,5 @@ const DisplayQoutes = (inputData) => {
     </div>
   );
 }
-
-
-
 
 export default App;
