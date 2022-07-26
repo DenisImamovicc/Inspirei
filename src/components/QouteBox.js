@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button'
 import Fade from 'react-bootstrap/Fade';
 
 export default function QouteBox({ Currqoute, open, ManageQoutes, ManageFade }) {
-
     return (
         <section id="quote-box">
             <Card className="Card">
