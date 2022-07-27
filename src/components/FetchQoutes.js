@@ -10,7 +10,7 @@ export default async function  FetchQoutes({ SetQoute, DisplayQoutes }) {
 
             }).catch((error) => {
                 console.error(error);
-                DisplayQoutes([{ q: "Server is down,but you do not have to be", a: "Denis Imamovic" }])
+                DisplayQoutes([{ q: "Server is down,but you do not have to be", a: "Inspirei" }])
             });
         //console.log(data)
 }

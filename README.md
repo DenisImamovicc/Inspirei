@@ -1,5 +1,5 @@
 # Inspirei
-Inspirational qoutes to see and tweet about(Client) and REST API(Server) to fetch and give inspirational qoutesdata.
+Inspirational qoutes to see and tweet about(Client) and REST API(Server) to fetch and give inspirational qoutes data.
 
 ## Installation
 Create a terminal,then acess the server to download necessary node files and dependecies
@@ -22,7 +22,7 @@ npm start or Y
 ## Activating Client
 Go to hosted live version page in the github about section or this link:
 ```
-https://random-qoutes-generator.netlify.app/
+https://inspirei.netlify.app/
 ```
 If you want to try in your desktop instead then type in the terminal and put http://localhost:3000 in your prefered web browser
 ```bash
@@ -30,4 +30,4 @@ serve -s build
 ```
 Starts the client on a localhost in your browser.
 
-If you want to see how gallery reacts without Server then do not activate server and reload client for good measure.
+If you want to see how client reacts without Server active then block response from server on devtools and reload the site.

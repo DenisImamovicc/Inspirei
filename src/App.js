@@ -15,11 +15,6 @@ function App() {
   const SetQoute = (data) => setqoute(data)
 
   const DisplayQoutes = (inputData) => {
-    if (Currqoute === undefined) {
-      console.log("its undefined");
-      setCurrqoute(inputData[0])
-      ManageFade()
-    }
     setcount((count) => count + 1)
     setCurrqoute(inputData[count])
     ManageFade()

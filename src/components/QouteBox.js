@@ -1,7 +1,5 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
-import Fade from 'react-bootstrap/Fade';
+import {Card,Button,Fade} from 'react-bootstrap'
 
 export default function QouteBox({ Currqoute, open, ManageQoutes, ManageFade }) {
     return (
