@@ -9,8 +9,8 @@ export default async function  FetchQoutes({ SetQoute, DisplayQoutes }) {
                 DisplayQoutes(data)
 
             }).catch((error) => {
-                console.error(error);
-                DisplayQoutes([{ q: "Server is down,but you do not have to be", a: "Inspirei" }])
+                console.error(error.message);
+                DisplayQoutes([{ q: "Server is down,but you do not have to be", a: "Inspirei",error:true }])
             });
         //console.log(data)
 }

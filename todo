@@ -8,4 +8,6 @@
 
 -get bg images from an api
 
+-Fix bug where it does not go thru the whole arrray with 1 leaving behind
+
 
