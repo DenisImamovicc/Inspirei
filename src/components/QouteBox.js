@@ -1,7 +1,8 @@
 import React from 'react'
 import { Card, Button, Fade } from 'react-bootstrap'
 
-export default function QouteBox({ Currqoute, open, ManageQoutes, ManageFade }) {
+export default function QouteBox({ Currqoute, open, ManageQoutes, ManageFade, loading }) {
+
     return (
         <section id="quote-box">
             <Card className="Card">
@@ -11,7 +12,7 @@ export default function QouteBox({ Currqoute, open, ManageQoutes, ManageFade }) 
                     <nav className='button-group'>
                         {Currqoute.error
                             ?
-                            <Button variant="btn btn-primary" id="new-quote" className='mb-2 text-white' onClick={() => { setTimeout(ManageQoutes, 700); ManageFade() }} aria-controls="text author" aria-expanded={open} role="button" disabled>No qoute available</Button>
+                            <Button variant="btn btn-primary" id="new-quote" className='mb-2 text-white' onClick={() => { setTimeout(ManageQoutes, 700); ManageFade() }} aria-controls="text author" aria-expanded={open} role="button" disabled>No qoute available yet</Button>
                             :
                             <Button variant="btn btn-primary" id="new-quote" className='mb-2 text-white' onClick={() => { setTimeout(ManageQoutes, 700); ManageFade() }} aria-controls="text author" aria-expanded={open} role="button">Next qoute</Button>
                         }
