@@ -16,29 +16,24 @@ function App() {
 
   const DisplayQoutes = (inputData) => {
     if (inputData.length === 1) {
-      console.log("fuck you");
       setCurrqoute(inputData[0])
     } else if (count === 0) {
       setcount((count) => count + 1)
       setCurrqoute(inputData[count])
-      console.log(Currqoute, count, "fade applied");
     } else {
       setcount((count) => count + 1)
       setCurrqoute(inputData[count])
       ManageFade()
-      console.log(Currqoute, count, "fade applied");
     }
   }
 
   const ManageQoutes = () => {
     if (count === qoute.length - 1 || count === 0) {
-      console.log("if passed")
       DisplayQoutes(Currqoute)
       FetchQoutes({ SetQoute, DisplayQoutes })
       //setTimeout(() => { FetchQoutes({ SetQoute, DisplayQoutes }) }, 3000)
       setcount(0)
     } else {
-      console.log("else passed")
       DisplayQoutes(qoute)
     }
   }
