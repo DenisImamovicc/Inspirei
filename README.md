@@ -1,6 +1,8 @@
 # Inspirei
 Inspirational qoutes to see and tweet about(Client) and REST API(Server) to fetch and give inspirational qoutes data.
 
+Api used:https://zenquotes.io/
+
 ## Installation
 Create a terminal,then acess the server to download necessary node files and dependecies
 ```bash
